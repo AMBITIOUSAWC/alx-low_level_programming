@@ -1,4 +1,4 @@
-#inlude < unistd.h >
+#include < unistd.h >
 /**
  * main - this prints exactly the imput on it
  * Return: always 1.
