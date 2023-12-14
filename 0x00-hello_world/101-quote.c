@@ -1,7 +1,7 @@
 #inlude <unistd.h>
 /**
  * main - this prints exactly the imput on it
- * Return always 1.
+ * Return: always 1.
  */
 int main(void)
 {
