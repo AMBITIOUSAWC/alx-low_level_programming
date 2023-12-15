@@ -1,12 +1,17 @@
 #include <stdio.h>
 
-int main(void)
-{
-	for (int h = 0; h < 8; h++)
-		for (int t = h + 1; t < 9; t++)
-			for (int o = t + 1; o < 10; o++)
-				putchar(h + '0'), putchar(t + '0'), putchar(o + '0'), putchar(h < 7 || t < 8 || o < 9 ? ',' : ' '), putchar(h < 7 || t < 8 || o < 9 ? ' ' : '\n');
+int main(void) {
+    for (int i = 0; i <= 7; i++) {
+        for (int j = i + 1; j <= 8; j++) {
+            for (int k = j + 1; k <= 9; k++) {
+                putchar((i % 10) + '0');
+                putchar((j % 10) + '0');
+                putchar((k % 10) + '0');
+                putchar((i != 7 || j != 8 || k != 9) ? ',' : '\n');
+            }
+        }
+    }
 
-	return 0;
+    return 0;
 }
 
