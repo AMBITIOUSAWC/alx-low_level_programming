@@ -3,22 +3,18 @@
 /**
  * main - Entry point
  *
- * Description: Prints all the numbers of base 16 in lowercase,
- *              followed by a new line.
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    char hexDigits[] = "0123456789abcdef";
-    int i;
+	int num;
 
-    for (i = 0; i < 16; i++)
-    {
-        putchar(hexDigits[i]);
-    }
+	for (num = 48; num < 58; num++)
+		putchar(num);
+	for (num = 97; num < 103; num++)
+		putchar(num);
+	putchar('\n');
 
-    putchar('\n');
-
-    return 0;
+	return (0);
 }
 
