@@ -1,10 +1,16 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
+ * main - This is a function*
  * Return: Always 0
  */
+
+
+/* more headers goes there */
+
+/*betty style doc for function main goes there */
 int main(void)
 {
     int n, lastDigit;
