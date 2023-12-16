@@ -2,11 +2,13 @@
 
 int main(void)
 {
-    int digit;
+	int i;
 
-    for (digit = 0; digit < 10; digit++)
-        putchar(digit + '0'), putchar(digit < 9 ? ',' : '\n'), putchar(digit < 9 ? ' ' : 0);
-
-    return 0;
+	for (i = 0; i < 10; i++)
+		putchar(i + '0');
+		if (i != 9)
+			putchar(',');
+			putchar(' ');
+	putchar('\n');
+	return (0);
 }
-
