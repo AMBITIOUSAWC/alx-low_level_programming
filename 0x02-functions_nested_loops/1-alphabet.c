@@ -1,5 +1,4 @@
-/* 1-alphabet.c file */
-#include <unistd.h>
+#include "main.h"
 
 int _putchar(char c);
 
