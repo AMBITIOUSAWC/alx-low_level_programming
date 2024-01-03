@@ -6,11 +6,10 @@
  *
  * Return: nothing
  */
-
 void swap_int(int *a , int *b)
 	/*the functin that swaps the value of the integers. */
 {
 	int temp = *a;
 	*a = *b;
-	*b =temp;
+	*b = temp;
 }
