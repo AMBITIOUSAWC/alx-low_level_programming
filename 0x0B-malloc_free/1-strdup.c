@@ -3,47 +3,32 @@
 
 /**
  * _strdup - returns a pointer to a newly allocated space in memory,
- * @str: string to duplicate
- * Return: pointer to duplicated string on success, NULL on error
+ *           which contains a copy of the string given as a parameter.
+ * @str: the source string
+ *
+ * Return: returns a pointer to the duplicated string.
+ *         It returns NULL if insufficient memory was available
  */
 char *_strdup(char *str)
 {
-	char *duplicate_str;
-	int i, len = 0;
+    char *copy;
+    int i, len = 0;
 
-	if (str == NULL) /* validate str input */
-		return (NULL);
+    if (str == NULL)
+        return (NULL);
 
-	while (*(str + len))
-		len++;
-	duplicate_str = malloc(sizeof(char) * (len + 1)); /* allocate memory */
+    while (str[len] != '\0')
+        len++;
 
-	if (duplicate_str == NULL) /* validate memory */
-		return (NULL);
+    copy = (char *)malloc((sizeof(char) * len) + 1);
 
-	for (i = 0; i < len; i++) /* copy the string */
-		*(duplicate_str + i) = *(str + i);
+    if (copy == NULL)
+        return (NULL);
 
-	*(duplicate_str + i) = '\0'; /* null terminate the string */
+    for (i = 0; i < len; i++)
+        copy[i] = str[i];
 
-	return (duplicate_str);
-}
+    copy[len] = '\0';
 
-/**
- * main - main function
- * Return: 0 on success, 1 on failure
- */
-int main(void)
-{
-	char *buffer;
-
-	buffer = _strdup("ALX SE");
-	if (buffer == NULL)
-	{
-		printf("failed to allocate memory\n");
-		return (1);
-	}
-	printf("%s\n", buffer);
-	free(buffer);
-	return (0);
+    return (copy);
 }
