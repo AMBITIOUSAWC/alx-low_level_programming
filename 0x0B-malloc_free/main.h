@@ -3,10 +3,10 @@
 
 #include <stdio.h>
 
-int _putchar(char ch);  /* Prototype for _putchar */
+int _putchar(char ch);
 
 /* Function prototypes */
-char *create_array(int size, char c);  /* Change the parameter type here */
+char *create_array(unsigned int size, char c);  /* Updated parameter type */
 char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 int **alloc_grid(int width, int height);
