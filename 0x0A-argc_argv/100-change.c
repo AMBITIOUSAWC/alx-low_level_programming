@@ -6,7 +6,7 @@
  * for an amount of money
  * @argc: argument count
  * @argv: arguments
- * Return: 0
+ * Return: 0 on success, 1 on error
  */
 int main(int argc, char **argv)
 {
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
                 if (total >= cents[i])
                 {
                     count += total / cents[i];
-                    total = total % cents[i];
+                    total %= cents[i];
                 }
             }
         }
