@@ -1,48 +1,43 @@
+#include "function_pointers.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "3-calc.h"
 
 /**
- * print_opcodes - print the opcodes of this program
- * @a: address of the main function
- * @n: number of bytes to print
+ * main - Prints the result of simple operations.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * Return: void
+ * Return: Always 0.
  */
-void print_opcodes(char *a, int n)
+int main(int argc, char *argv[])
 {
-int i;
+int num1, num2;
+char *op;
 
-for (i = 0; i < n; i++)
-{
-printf("%.2hhx", a[i]);
-if (i < n - 1)
-printf(" ");
-}
-printf("\n");
-}
-
-/**
- * main - prints the opcodes of its own main function
- * @argc: number of arguments passed to the function
- * @argv: array of pointers to arguments
- *
- * Return: always 0
- */
-int main(int argc, char **argv)
-{
-int n;
-
-if (argc != 2)
+if (argc != 4)
 {
 printf("Error\n");
-exit(1);
+exit(98);
 }
-n = atoi(argv[1]);
-if (n < 0)
+
+num1 = atoi(argv[1]);
+op = argv[2];
+num2 = atoi(argv[3]);
+
+if (get_op_func(op) == NULL || op[1] != '\0')
 {
 printf("Error\n");
-exit(2);
+exit(99);
 }
-print_opcodes((char *)&main, n);
+
+if ((*op == '/' && num2 == 0) ||
+(*op == '%' && num2 == 0))
+{
+printf("Error\n");
+exit(100);
+}
+printf("%d\n", get_op_func(op)(num1, num2));
+
 return (0);
 }
